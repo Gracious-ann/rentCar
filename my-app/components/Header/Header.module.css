@@ -1,0 +1,29 @@
+.header {
+  padding: 24px 120px 24px 120px;
+}
+
+.header_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigationList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 32px;
+}
+.navigation_item {
+}
+.navigation_item_link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--main);
+}
+
+.navigation_item_link:hover {
+  color: var(--light-blue);
+}

@@ -1,0 +1,50 @@
+.hero {
+  height: 700px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  gap: 40px;
+  background-image: url('/images/CarHero1x.jpg');
+  background-image: image-set(
+    url('/images/CarHero_1x.webp') 1x type('image/webp'),
+    url('/images/CarHero_2x.webp') 2x type('image/webp'),
+    url('/images/CarHero1x.jpg') 1x type('image/jpeg'),
+    url('/images/CarHero2x.jpg') 2x type('image/jpeg')
+  );
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero_container_content {
+}
+.hero_title {
+  font-family: var(--font-family);
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--white);
+}
+.hero_paragraf {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  text-align: center;
+  color: var(--white);
+}
+.hero_link {
+  border-radius: 12px;
+  padding: 12px 99px;
+  height: 44px;
+  background: var(--light-blue);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--white);
+}
