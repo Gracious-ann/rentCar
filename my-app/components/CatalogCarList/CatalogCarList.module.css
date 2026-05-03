@@ -1,0 +1,14 @@
+.car_containerList {
+  margin-bottom: 48px;
+}
+.car_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  list-style: none;
+}
+
+.car_loadMore {
+  display: flex;
+  justify-content: center;
+}

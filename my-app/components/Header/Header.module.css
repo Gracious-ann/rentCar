@@ -1,5 +1,6 @@
 .header {
   padding: 24px 120px 24px 120px;
+  background-color: var(--white);
 }
 
 .header_nav {

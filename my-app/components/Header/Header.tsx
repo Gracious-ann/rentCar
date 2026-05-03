@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <header className={css.header}>
       <nav className={css.header_nav}>
-        <Link href={'/'}>
+        <Link
+          href={'/'}
+          aria-label='Home'
+        >
           <Image
             // className={css.logoIcon}
             width={102}

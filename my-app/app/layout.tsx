@@ -14,6 +14,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: 'Rental Car',
   description: 'Rental Car in your city',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${manrope.variable}`}>{children}</body>
+      <body className={`${manrope.variable}`}>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
