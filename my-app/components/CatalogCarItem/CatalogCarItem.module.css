@@ -50,12 +50,26 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
+  /* min-width: 0; */
+  max-width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
 }
 
 .model {
   color: var(--light-blue);
+  display: inline-block;
 }
-
+/* .year {
+  display: inline-block;
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+} */
 .price {
   margin-left: auto;
   font-family: var(--font-family);
@@ -101,7 +115,6 @@
 }
 .read_more_btn {
   margin-top: 24px;
-
   width: 100%;
   height: 44px;
 
