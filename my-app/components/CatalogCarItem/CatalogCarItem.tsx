@@ -47,6 +47,8 @@ const CatalogCarItem = ({ item }: Props) => {
         <Link
           href={`/catalog/${item.id}`}
           className={css.read_more_btn}
+          target='_blank'
+          rel='noopener noreferrer'
         >
           Read more
         </Link>

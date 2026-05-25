@@ -29,12 +29,41 @@ export type CarListResponse = {
 
 axios.defaults.baseURL = 'https://car-rental-api.goit.global';
 
-export const getCars = async ({ pageParam = 1 }) => {
+export const getCars = async ({
+  pageParam = 1,
+  brand,
+  rentalPrice,
+  minMileage,
+  maxMileage,
+}: {
+  pageParam?: number;
+  brand?: string;
+  rentalPrice?: string | number;
+  minMileage?: string | number;
+  maxMileage?: string | number;
+}) => {
   const res = await axios.get<CarListResponse>('/cars', {
     params: {
       page: pageParam,
       limit: 12,
+
+      ...(brand && { brand }),
+      ...(rentalPrice && { rentalPrice }),
+      ...(minMileage && { minMileage }),
+      ...(maxMileage && { maxMileage }),
     },
   });
+
+  return res.data;
+};
+
+export const getBrands = async (): Promise<string[]> => {
+  const res = await axios.get<string[]>('/brands');
+
+  return res.data;
+};
+
+export const getSingleNoteCar = async (id: string) => {
+  const res = await axios.get<Car>(`/cars/${id}`);
   return res.data;
 };

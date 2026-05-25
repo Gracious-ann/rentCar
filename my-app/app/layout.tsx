@@ -3,7 +3,7 @@ import { Manrope } from 'next/font/google';
 import 'modern-normalize/modern-normalize.css';
 import './globals.css';
 import Header from '@/components/Header/Header';
-import Home from './page';
+import { Toaster } from 'react-hot-toast';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 
 const manrope = Manrope({
@@ -31,6 +31,7 @@ export default function RootLayout({
         <TanStackProvider>
           <Header />
           <main>{children}</main>
+          <Toaster position='top-right' />
         </TanStackProvider>
       </body>
     </html>

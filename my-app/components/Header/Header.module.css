@@ -28,3 +28,7 @@
 .navigation_item_link:hover {
   color: var(--light-blue);
 }
+
+.active {
+  color: #0ea5e9;
+}

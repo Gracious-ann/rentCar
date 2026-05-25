@@ -33,7 +33,12 @@ const CatalogCarList = ({
         {isLoading ? (
           <Loading />
         ) : hasNextPage ? (
-          <Button onClick={onLoadMore}>Load More</Button>
+          <Button
+            onClick={onLoadMore}
+            variant='secondary'
+          >
+            Load More
+          </Button>
         ) : null}
       </div>
     </>

@@ -1,0 +1,73 @@
+.filter {
+  padding: 84px 0 60px 0;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 16px;
+}
+.selects {
+  display: flex;
+  gap: 16px;
+}
+.mileage_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.mileage_label {
+  margin-bottom: 8px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.mileage_inputs {
+  display: flex;
+  align-items: center;
+
+  height: 44px;
+
+  background-color: var(--white);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.mileage_input {
+  width: 160px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+
+  padding: 0 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+
+  background: transparent;
+}
+
+.mileage_input::placeholder {
+  color: var(--main);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.mileage_input:first-child {
+  border-right: 1px solid #dadde1;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+  gap: 8px;
+}

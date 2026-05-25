@@ -1,0 +1,23 @@
+.car_fullInfo {
+  display: flex;
+  flex-direction: row;
+  padding-top: 84px;
+}
+.carimg_form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 640px;
+  height: 968px;
+}
+.carinfo_details {
+  min-width: 640px;
+  height: 968px;
+  display: flex;
+  gap: 68px;
+  flex-direction: column;
+  margin-left: 32px;
+  border-radius: 16px;
+  padding: 32px 24px;
+  background-color: var(--white);
+}
