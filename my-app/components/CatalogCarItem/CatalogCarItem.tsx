@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CatalogCarItem = ({ item }: Props) => {
-  const [street, city, country] = item.address.split(', ');
+  const { city, country, address: street } = item.location;
 
   return (
     <li className={css.car_card}>

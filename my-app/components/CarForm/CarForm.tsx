@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import css from './CarForm.module.css';
 import Button from '../Button/Button';
 import toast from 'react-hot-toast';
+import { SendFormData } from '@/lib/api';
 
 interface SendFormValues {
   name: string;
@@ -37,17 +38,20 @@ export default function CarForm({ id }: { id: string }) {
     actions: FormikHelpers<SendFormValues>,
   ) => {
     try {
-      toast.loading('Sending request...', { id: 'rent' });
-
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      console.log('Send data:', values, 'Car ID:', id);
+      await SendFormData(id, {
+        name: values.name,
+        email: values.email,
+        comment: values.comment || 'No comment',
+      });
 
       actions.resetForm();
 
-      toast.success('Car booked successfully! 🚗', { id: 'rent' });
+      toast.success(
+        'Booking request for Buick Enclave accepted. We will contact you at john@example.com 🚗',
+      );
     } catch (error) {
-      toast.error('Something went wrong 😢', { id: 'rent' });
+      toast.error('Something went wrong 😢');
+      actions.resetForm();
     }
   };
 

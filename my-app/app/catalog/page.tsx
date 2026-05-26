@@ -2,11 +2,10 @@
 
 import CatalogCarList from '@/components/CatalogCarList/CatalogCarList';
 import BrandSelect from '@/components/SelectorBrands/BrandSelect';
-import { getBrands, getCars } from '@/lib/api';
+import { getFilter, getCars } from '@/lib/api';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import css from './page.module.css';
-import { form } from 'framer-motion/client';
 import Button from '@/components/Button/Button';
 // import Select from 'react-select';
 
@@ -32,21 +31,19 @@ const Cars = () => {
   const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
     useInfiniteQuery({
       queryKey: ['cars', submittedFilters],
-      queryFn: ({ pageParam = 1 }) => {
-        return getCars({
+      queryFn: ({ pageParam = 1 }) =>
+        getCars({
           pageParam,
           brand: submittedFilters.brand,
-          rentalPrice: submittedFilters.rentalPrice,
-
+          price: submittedFilters.rentalPrice,
           minMileage: submittedFilters.minMileage
             ? convertKmToMiles(submittedFilters.minMileage)
             : '',
-
           maxMileage: submittedFilters.maxMileage
             ? convertKmToMiles(submittedFilters.maxMileage)
             : '',
-        });
-      },
+        }),
+
       initialPageParam: 1,
       getNextPageParam: lastPage => {
         const current = Number(lastPage.page);
@@ -64,13 +61,13 @@ const Cars = () => {
 
   const cars = data?.cars ?? [];
 
-  const { data: brandsData } = useQuery({
-    queryKey: ['brands'],
-    queryFn: getBrands,
+  const { data: filtersData } = useQuery({
+    queryKey: ['filters'],
+    queryFn: getFilter,
   });
 
-  const brandOptions: Option[] =
-    brandsData?.map(brand => ({
+  const brandsOptions: Option[] =
+    filtersData?.brands.map(brand => ({
       label: brand,
       value: brand,
     })) || [];
@@ -103,14 +100,17 @@ const Cars = () => {
     });
   };
 
-  const priceOptions: Option[] = [
-    { label: '$30', value: '30' },
-    { label: '$40', value: '40' },
-    { label: '$50', value: '50' },
-    { label: '$60', value: '60' },
-    { label: '$70', value: '70' },
-    { label: '$80', value: '80' },
-  ];
+  const pricesOptions: Option[] = [];
+  for (
+    let i = Number(filtersData?.price.min);
+    i <= Number(filtersData?.price.max);
+    i += 10
+  ) {
+    pricesOptions.push({
+      label: String(i),
+      value: String(i),
+    });
+  }
 
   return (
     <div className='container'>
@@ -120,7 +120,7 @@ const Cars = () => {
       >
         <div className={css.selects}>
           <BrandSelect
-            options={brandOptions}
+            options={brandsOptions}
             value={filters.brand}
             onChange={value => updateFilter('brand', value)}
             label='Car brand'
@@ -128,7 +128,7 @@ const Cars = () => {
           />
 
           <BrandSelect
-            options={priceOptions}
+            options={pricesOptions}
             value={filters.rentalPrice}
             onChange={value => updateFilter('rentalPrice', value)}
             label='Price/ 1 hour'

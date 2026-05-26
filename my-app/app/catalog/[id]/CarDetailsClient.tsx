@@ -7,7 +7,7 @@ import CarHero from '@/components/CarHero/CarHero';
 import CarInfo from '@/components/CarInfo/CarInfo';
 import CarDetails from '@/components/CarDetails/CarDetails';
 import CarForm from '@/components/CarForm/CarForm';
-import css from './CarDetails.module.css';
+import css from './CarDetailsClient.module.css';
 import Load from '@/components/Loading/Loading';
 import ErrorView from '@/components/Error/ErrorView';
 import NotFound from '../not-found';
@@ -52,7 +52,7 @@ const CarDetailsClient = () => {
               brand={car.brand}
               model={car.model}
               rentalPrice={car.rentalPrice}
-              address={car.address}
+              address={car.location.city + ', ' + car.location.country}
               year={car.year}
               description={car.description}
             />
@@ -62,9 +62,9 @@ const CarDetailsClient = () => {
               year={car.year}
               type={car.type}
               fuelConsumption={car.fuelConsumption}
-              engineSize={car.engineSize}
+              engineSize={car.engine}
               mileage={car.mileage}
-              accessories={car.accessories}
+              accessories={car.features}
             />
           </div>
         </div>

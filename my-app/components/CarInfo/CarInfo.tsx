@@ -28,7 +28,7 @@ const CarInfo = ({
       <div className={css.location}>
         <FiMapPin className={css.icon} />
 
-        <p className={css.address}>{address.split(',').slice(1).join(',')}</p>
+        <p className={css.address}>{address}</p>
       </div>
 
       <p className={css.price}>${rentalPrice}</p>

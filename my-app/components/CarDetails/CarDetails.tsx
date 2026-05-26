@@ -51,6 +51,8 @@ const CarDetails = ({
         </ul>
       </div>
 
+      <div className={css.divider}></div>
+
       {/* Specifications */}
 
       <div className={css.section}>
@@ -88,7 +90,7 @@ const CarDetails = ({
           </li>
         </ul>
       </div>
-
+      <div className={css.divider}></div>
       {/* Features */}
 
       <div className={css.section}>
