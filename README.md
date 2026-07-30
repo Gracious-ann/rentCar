@@ -1,30 +1,28 @@
-Rental Car 🚗
+# Rental Car 🚗
 
-A modern car rental web application built with React and designed to provide a simple and convenient way to browse available rental cars.
+A modern and responsive car rental web application built with React.
 
-The application allows users to explore the car catalog and find a suitable vehicle for their journey.
+The application allows users to browse available vehicles, explore car details, and find a suitable car for their trip through a clean and intuitive interface.
 
-✨ Features
-Browse available rental cars
-View the car catalog
-Explore car information
-Navigate between the home page and catalog
-Responsive and user-friendly interface
-Clean and modern design
-🛠️ Technologies
-React
-JavaScript
-Vite
-CSS
-React Router
+## ✨ Features
 
+* Browse available rental cars
+* View detailed information about each vehicle
+* Filter and explore the car catalog
+* Navigate between application pages
+* Responsive design for different screen sizes
+* Clean and user-friendly interface
 
-The application will be available at:
+## 🛠️ Technologies
 
-http://localhost:5173
+* React
+* JavaScript
+* Vite
+* React Router
+* CSS
 
-🌐 Live Demo
+## 🌐 Live Demo
 
-The application is deployed on Vercel:
+The project is deployed on Vercel:
 
 https://rent-car-2-ten.vercel.app/
